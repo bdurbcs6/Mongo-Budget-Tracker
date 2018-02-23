@@ -4,7 +4,7 @@ const expenseSchema = mongoose.Schema({
   amount: Number,
   description: String,
   budget: {
-    tpe: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'budget'
   },
   category: {
