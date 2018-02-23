@@ -2,8 +2,8 @@ const Budget = require('../models/budget');
 const Expense = require('../models/expense');
 
 const budgetCreate = (req, res) => {
-  const { title, budgetAmmount } = req.body;
-  const newBudget = Budget({ title, budgetAmmount });
+  const { title, budgetAmount } = req.body;
+  const newBudget = Budget({ title, budgetAmount });
 
   newBudget
     .save()
@@ -23,7 +23,7 @@ const budgetSummary = (req, res) => {
         ])
         .exec()
         .then((value) => {
-          res.json({ value: testB.budgetAmmount - value[0].total });
+          res.json({ value: testB.budgetAmount - value[0].total });
         })
         .catch(err => res.status(500).json(err));
     })
